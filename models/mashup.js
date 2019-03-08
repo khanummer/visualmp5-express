@@ -10,4 +10,4 @@ const mashupSchema = new mongoose.Schema({
 });
 
 
-export default mongoose.model('Mashup', mashupSchema);
+module.exports = mongoose.model('Mashup', mashupSchema);

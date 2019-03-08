@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express();
+const router = express.Router();
 // const axios = require('axios');
 
 // app.get('/soundcloud', async (req, res) => {
