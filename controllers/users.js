@@ -72,18 +72,18 @@ router.get('/logout', async(req, res) => {
 
 
 // show route
-// router.get('/:id', async (req, res) => {
-//     try {
-//         const foundUser = await User.findById(req.params.id);
-//         res.json({
-//             status: 200,
-//             data: foundUser
-//         });
-//     } catch (err) {
-//         console.log(err);
-//         res.send(err);
-//     }
-// });
+router.get('/:id', async (req, res) => {
+    try {
+        const foundUser = await User.findById(req.params.id);
+        res.json({
+            status: 200,
+            data: foundUser
+        });
+    } catch (err) {
+        console.log(err);
+        res.send(err);
+    }
+});
 
 
 
