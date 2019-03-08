@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 
 const mashupSchema = new mongoose.Schema({
     userId: String,
-    soundcloudSong: Object,
+    spotifySong: String,
     Image: String,
-    Video: Object,
+    Video: String,
     Votes: Number
 });
 

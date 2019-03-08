@@ -2,23 +2,23 @@
   "name": "express",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./index.js --exec babel-node -e js"
+    "start": "nodemon ./server.js"
   },
   "dependencies": {
     "apollo-server-express": "^2.4.8",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
     "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "graphql": "^14.1.1",
-    "mongoose": "^5.4.17"
+    "mongoose": "^5.4.17",
+    "spotify-web-api-node": "^4.0.0"
   },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1"
-  },
+  "devDependencies": {},
   "author": "",
   "license": "ISC"
 }
