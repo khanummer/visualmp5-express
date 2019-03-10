@@ -3,6 +3,8 @@ const router = express.Router();
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
 
+// login create a session, logout destroy the session
+
 
 // get all Users route
 router.get('/', async (req, res) => {
@@ -65,6 +67,7 @@ router.post('/login', async (req, res) => {
 // logout route
 router.get('/logout', async(req, res) => {
     req.logout()
+    
     res.json({
         user: req.user
     });

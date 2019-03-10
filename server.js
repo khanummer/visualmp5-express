@@ -17,8 +17,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 const apiController = require('./controllers/api');
 const userController = require('./controllers/users');
+const mashupController = require('./controllers/mashups');
 app.use('/api', apiController);
 app.use('/users', userController);
+app.use('/mashups', mashupController);
 
 
 
