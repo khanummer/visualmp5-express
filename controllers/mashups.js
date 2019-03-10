@@ -29,4 +29,19 @@ router.post('/', async (req, res) => {
   }
 });
 
+// show one mashup route
+router.get('/:id', async (req, res) => {
+    try {
+        const foundMashup = await Mashup.findById(req.params.id);
+        res.json({
+            status: 200,
+            data: foundMashup
+        });
+    } catch (err) {
+        console.log(err);
+        res.send(err);
+    }
+});
+
+
 module.exports = router
