@@ -43,5 +43,17 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+// delete mashup route
+router.delete('/:id', async (req, res) => {
+    try {
+       const deletedMashup = await Mashup.findByIdAndRemove(req.params.id);
+        res.json({
+          status: 200,
+          data: deletedMashup
+        });
+    } catch(err){
+      res.send(err);
+    }
+});
 
 module.exports = router
