@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+const database = process.env.MONGODB_URI
 
 // create our db and connect
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(database, {
    useNewUrlParser: true, 
    useCreateIndex: true,
    useFindAndModify: false  
