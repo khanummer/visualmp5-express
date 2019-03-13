@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // create our db and connect
-mongoose.connect('mongodb://localhost/visualmp5', {
+mongoose.connect(MONGODB_URI, {
    useNewUrlParser: true, 
    useCreateIndex: true,
    useFindAndModify: false  
