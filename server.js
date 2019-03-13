@@ -16,7 +16,7 @@ app.use(cors({credentials: true, origin: 'https://visual-mp5.herokuapp.com'}));
 
 /********** MIDDLEWARE **********/
 app.use(session({
-  secret: SECRET,
+  secret: `${SECRET}`,
   resave: false,
   saveUninitialized: false
 }));
