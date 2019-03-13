@@ -56,6 +56,6 @@ app.use(function (req, res, next) {
   next();
   });
 
-app.listen(4000, () => {
+app.listen(process.env.PORT, () => {
   console.log('server is running on localhost:4000')
 });
