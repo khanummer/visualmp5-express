@@ -6,11 +6,19 @@ const app = express();
 const cors = require('cors');
 const axios = require('axios')
 const bodyParser = require('body-parser')
+const session = require('express-session')
 
 // app.use(cors());
 
 // app.use('*', cors({ origin: 'http://localhost:3000'}));
 app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
+
+/********** MIDDLEWARE **********/
+app.use(session({
+  secret: "THIS IS A RANDOM STRING SECRET",
+  resave: false,
+  saveUninitialized: false
+}));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

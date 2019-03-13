@@ -23,8 +23,12 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     let crypted = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
     req.body.password = crypted;
+    
     try {
+        
         const user = await User.create(req.body);
+        req.session.user = user
+        console.log(req.session.user, 'this is req . session . user')
         res.json({
             status: 200,
             data: 'login successful',
@@ -41,6 +45,9 @@ router.post('/login', async (req, res) => {
     try {
         //find logged in user //getting username from req.body (username was attached via form and kept in req.body)
         const loggedUser = await User.findOne({ username: req.body.username });
+        req.session.user = loggedUser
+        console.log(req.session.user, 'this is req . session . user')
+
         //if user exists
         if (loggedUser) {
             //check if the passwords match, if they do, redirect to page, if not, keep on splash page with message
@@ -66,8 +73,12 @@ router.post('/login', async (req, res) => {
 
 // logout route
 router.get('/logout', async(req, res) => {
-    req.logout()
-    
+    console.log('hitting logout')
+    req.session.destroy((err) => {
+        if (err) return console.log('error', err);
+        console.log('successful');
+    //     res.json({ data: 'User successfully logged out.' })
+    });    
     res.json({
         user: req.user
     });
