@@ -8,6 +8,7 @@ const axios = require('axios')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 
+const SECRET = process.env.SECRET
 // app.use(cors());
 
 // app.use('*', cors({ origin: 'http://localhost:3000'}));
@@ -15,7 +16,7 @@ app.use(cors({credentials: true, origin: 'https://visual-mp5.herokuapp.com'}));
 
 /********** MIDDLEWARE **********/
 app.use(session({
-  secret: "THIS IS A RANDOM STRING SECRET",
+  secret: SECRET,
   resave: false,
   saveUninitialized: false
 }));
