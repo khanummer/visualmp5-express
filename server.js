@@ -12,7 +12,7 @@ const SECRET = process.env.SECRET
 // app.use(cors());
 
 // app.use('*', cors({ origin: 'http://localhost:3000'}));
-app.use(cors({credentials: true, origin: 'https://visual-mp5.herokuapp.com'}));
+app.use(cors({credentials: true, origin: ['http://localhost:3000', 'https://visual-mp5.herokuapp.com']}));
 
 /********** MIDDLEWARE **********/
 app.use(session({
@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
 app.use(function (req, res, next) {
 
   // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', 'https://visual-mp5.herokuapp.com', 'http://visual-mp5.herokuapp.com');
+  res.setHeader('Access-Control-Allow-Origin', 'https://visual-mp5.herokuapp.com');
   
   // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
